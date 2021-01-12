@@ -60,7 +60,7 @@
       <section class="hero">
         <div class="hero-content">
           <h1 class="hero-title">ЭФФЕКТИВНЫЕ РЕШЕНИЯ ДЛЯ ВАШЕГО БИЗНЕСА</h1>
-          <a href="" class="button primary">Заказать услугу</a>
+          <a href="#" class="button primary" data-modal-open>Заказать услугу</a>
         </div>
       </section>
       <!-- Преимущества -->
@@ -131,6 +131,9 @@
                 width="370"
                 height="294"
               />
+              <div class="image-overlay">
+                <h3 class="overlay-text">ДЕСКТОПНЫЕ ПРИЛОЖЕНИЯ</h3>
+              </div>
             </li>
             <li class="work-item">
               <img
@@ -139,6 +142,9 @@
                 width="370"
                 height="294"
               />
+              <div class="image-overlay">
+                <h3 class="overlay-text">МОБИЛЬНЫЕ ПРИЛОЖЕНИЯ</h3>
+              </div>
             </li>
             <li class="work-item">
               <img
@@ -147,6 +153,9 @@
                 width="370"
                 height="294"
               />
+              <div class="image-overlay">
+                <h3 class="overlay-text">ДИЗАЙНЕРСКИЕ ПРИЛОЖЕНИЯ</h3>
+              </div>
             </li>
           </ul>
         </div>
@@ -440,5 +449,11 @@
         </div>
       </div>
     </footer>
+    <div class="backdrop is-hidden" data-modal>
+      <div class="modal">
+        <button class="button-close" data-modal-close>&#10006</button>
+      </div>
+    </div>
+    <script src="./js/modal.js"></script>
   </body>
 </html>

@@ -11,6 +11,8 @@
   --primary-white-color: #fff;
   --secondary-bg-color: #f5f4fa;
   --dark-bg-color: #2f303a;
+
+  --timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 html {
@@ -118,15 +120,32 @@ img {
   font-weight: 500;
   line-height: 1.14;
   text-decoration: none;
+
+  position: relative;
 }
 
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--accent-color);
+
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .site-nav .link.current {
   color: var(--accent-color);
+}
+
+.site-nav .link.current::after {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 4px;
+  border-radius: 2px;
+  background-color: var(--accent-color);
+
+  position: absolute;
+  bottom: -1px;
 }
 
 /* Contacts */
@@ -146,6 +165,9 @@ img {
 .contacts .link:hover,
 .contacts .link:focus {
   color: var(--accent-color);
+
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .contacts {
@@ -168,6 +190,9 @@ img {
 .contact-icon:hover,
 .contact-icon:focus {
   fill: var(--accent-color);
+
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .contacts .item + .item {
@@ -310,6 +335,29 @@ img {
 .work-item {
   width: 370px;
   margin-right: 30px;
+
+  position: relative;
+}
+
+.image-overlay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  margin: 0;
+  width: 370px;
+  height: 70px;
+  bottom: 0;
+  background-color: rgba(47, 48, 58, 0.8);
+}
+
+.overlay-text {
+  margin: 0;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.14;
+  text-align: center;
+  color: var(--primary-white-color);
 }
 
 .work-item:nth-child(3n) {
@@ -406,6 +454,9 @@ img {
 .social-logo:focus {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
+
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .social-icon {
@@ -430,6 +481,9 @@ img {
 .client-item:focus {
   border: 1px solid var(--accent-color);
   fill: var(--accent-color);
+
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .clients-item:nth-child(6n) {
@@ -457,6 +511,9 @@ img {
 .client-logo:focus {
   color: var(--accent-color);
   border: 1px solid var(--accent-color);
+
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .logo-icon {
@@ -541,6 +598,9 @@ footer {
 .footer-link:hover,
 .footer-link:focus {
   color: var(--accent-color);
+
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .connect {
@@ -590,6 +650,9 @@ footer {
 .social-logo.bottom:hover,
 .social-logo.bottom:focus {
   background-color: var(--accent-color);
+
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 /* Стили для portfolio */
@@ -606,6 +669,10 @@ footer {
   padding: 6px 22px;
   border: 1px solid transparent;
   cursor: pointer;
+
+  transition-property: background-color, box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .filter.primary {
@@ -631,6 +698,9 @@ footer {
   background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
+
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .portfolio .btn + .btn {
@@ -668,6 +738,9 @@ footer {
 .works-element:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
+
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .works-element:nth-child(3n) {
@@ -703,4 +776,125 @@ footer {
 
 .works .link {
   text-decoration: none;
+}
+
+/* Анимация для карточек */
+
+.portfolio-thumb {
+  position: relative;
+  overflow: hidden;
+}
+
+.works-element:hover .portfolio-thumb::before,
+.works-element:focus .portfolio-thumb::before {
+  transform: translateY(0);
+}
+
+.portfolio-thumb::before {
+  display: inline-block;
+  position: absolute;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: rgba(33, 150, 243, 0.9);
+
+  transform: translateY(100%);
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+}
+
+.card-text {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+
+  bottom: -100%;
+  left: 0;
+  opacity: 1;
+}
+
+.text-description {
+  box-sizing: border-box;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1, 55;
+  color: var(--primary-white-color);
+}
+
+.works-element:hover .card-text,
+.works-element:focus .card-text {
+  opacity: 1;
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  padding: 63px 24px;
+
+  top: 100%;
+  left: 0;
+  transform: translateY(-100%);
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
+}
+
+/* Модальное окно */
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+
+  opacity: 1;
+  transition: opacity 250ms var(--timing-function);
+}
+
+.backdrop.is-hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.backdrop.is-hidden .modal {
+  transform: translate(-50%, -50%) scale(0.9);
+}
+
+.modal {
+  min-width: 528px;
+  min-height: 581px;
+  border-radius: 4px;
+  background-color: var(--primary-white-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1);
+
+  transition: transform 250ms var(--timing-function);
+}
+
+.button-close {
+  position: absolute;
+  right: 8px;
+  top: 8px;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  outline: transparent;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: var(--primary-white-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
 }
