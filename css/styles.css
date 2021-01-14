@@ -122,14 +122,15 @@ img {
   text-decoration: none;
 
   position: relative;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .site-nav .link:hover,
 .site-nav .link:focus {
   color: var(--accent-color);
-
-  transition-duration: 250ms;
-  transition-timing-function: var(--timing-function);
 }
 
 .site-nav .link.current {
@@ -160,14 +161,15 @@ img {
   font-weight: 500;
   line-height: 1.14;
   text-decoration: none;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .contacts .link:hover,
 .contacts .link:focus {
   color: var(--accent-color);
-
-  transition-duration: 250ms;
-  transition-timing-function: var(--timing-function);
 }
 
 .contacts {
@@ -185,14 +187,15 @@ img {
 
 .contact-icon {
   margin-right: 10px;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .contact-icon:hover,
 .contact-icon:focus {
   fill: var(--accent-color);
-
-  transition-duration: 250ms;
-  transition-timing-function: var(--timing-function);
 }
 
 .contacts .item + .item {
@@ -449,15 +452,16 @@ img {
   background-position: center;
   color: #afb1b8;
   fill: currentColor;
+
+  transition-property: color, background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .social-logo:hover,
 .social-logo:focus {
   color: var(--primary-white-color);
   background-color: var(--accent-color);
-
-  transition-duration: 250ms;
-  transition-timing-function: var(--timing-function);
 }
 
 /* Clients */
@@ -472,15 +476,16 @@ img {
 .clients-item {
   display: block;
   margin-right: 30px;
+
+  transition-property: fill;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .client-item:hover,
 .client-item:focus {
   border: 1px solid var(--accent-color);
   fill: var(--accent-color);
-
-  transition-duration: 250ms;
-  transition-timing-function: var(--timing-function);
 }
 
 .clients-item:nth-child(6n) {
@@ -503,15 +508,16 @@ img {
   background-position: center;
   color: #afb1b8;
   fill: currentColor;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .client-logo:hover,
 .client-logo:focus {
   color: var(--accent-color);
   border: 1px solid var(--accent-color);
-
-  transition-duration: 250ms;
-  transition-timing-function: var(--timing-function);
 }
 
 /* Button */
@@ -578,6 +584,10 @@ footer {
   font-size: 14px;
   line-height: 1.71;
   letter-spacing: 0.03em;
+
+  transition-property: color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .mail-footer {
@@ -592,9 +602,6 @@ footer {
 .footer-link:hover,
 .footer-link:focus {
   color: var(--accent-color);
-
-  transition-duration: 250ms;
-  transition-timing-function: var(--timing-function);
 }
 
 .connect {
@@ -638,14 +645,15 @@ footer {
   background-position: center;
   color: var(--primary-white-color);
   background-color: rgba(255, 255, 255, 0.1);
+
+  transition-property: background-color;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .social-logo.bottom:hover,
 .social-logo.bottom:focus {
   background-color: var(--accent-color);
-
-  transition-duration: 250ms;
-  transition-timing-function: var(--timing-function);
 }
 
 /* Стили для portfolio */
@@ -663,7 +671,7 @@ footer {
   border: 1px solid transparent;
   cursor: pointer;
 
-  transition-property: background-color, box-shadow;
+  transition-property: background-color, color, box-shadow;
   transition-duration: 250ms;
   transition-timing-function: var(--timing-function);
 }
@@ -691,9 +699,6 @@ footer {
   background-color: var(--accent-color);
   box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
     0px 2px 2px rgba(0, 0, 0, 0.12);
-
-  transition-duration: 250ms;
-  transition-timing-function: var(--timing-function);
 }
 
 .portfolio .btn + .btn {
@@ -725,15 +730,16 @@ footer {
   margin-right: 30px;
   margin-bottom: 30px;
   border: 1px solid #eeeeee;
+
+  transition-property: box-shadow;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .works-element:hover,
 .works-element:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-
-  transition-duration: 250ms;
-  transition-timing-function: var(--timing-function);
 }
 
 .works-element:nth-child(3n) {
@@ -792,6 +798,7 @@ footer {
   background-color: rgba(33, 150, 243, 0.9);
 
   transform: translateY(100%);
+  transition-property: background-color, transform;
   transition-duration: 250ms;
   transition-timing-function: var(--timing-function);
 }
@@ -808,16 +815,10 @@ footer {
   bottom: -100%;
   left: 0;
   opacity: 1;
-}
 
-.text-description {
-  box-sizing: border-box;
-  margin-top: 0;
-  margin-bottom: 0;
-  font-weight: 400;
-  font-size: 18px;
-  line-height: 1, 55;
-  color: var(--primary-white-color);
+  transition-property: transform;
+  transition-duration: 250ms;
+  transition-timing-function: var(--timing-function);
 }
 
 .works-element:hover .card-text,
@@ -834,8 +835,16 @@ footer {
   top: 100%;
   left: 0;
   transform: translateY(-100%);
-  transition-duration: 250ms;
-  transition-timing-function: var(--timing-function);
+}
+
+.text-description {
+  box-sizing: border-box;
+  margin-top: 0;
+  margin-bottom: 0;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1, 55;
+  color: var(--primary-white-color);
 }
 
 /* Модальное окно */
