@@ -784,8 +784,8 @@ footer {
   overflow: hidden;
 }
 
-.works-element:hover .portfolio-thumb::before,
-.works-element:focus .portfolio-thumb::before {
+.link:hover .portfolio-thumb::before,
+.link:focus .portfolio-thumb::before {
   transform: translateY(0);
 }
 
@@ -821,8 +821,8 @@ footer {
   transition-timing-function: var(--timing-function);
 }
 
-.works-element:hover .card-text,
-.works-element:focus .card-text {
+.link:hover .card-text,
+.link:focus .card-text {
   opacity: 1;
   position: absolute;
   display: flex;
