@@ -162,7 +162,7 @@ img {
   line-height: 1.14;
   text-decoration: none;
 
-  transition-property: color;
+  transition-property: color, fill;
   transition-duration: 250ms;
   transition-timing-function: var(--timing-function);
 }
@@ -453,7 +453,7 @@ img {
   color: #afb1b8;
   fill: currentColor;
 
-  transition-property: color, background-color;
+  transition-property: color, background-color, fill;
   transition-duration: 250ms;
   transition-timing-function: var(--timing-function);
 }
@@ -509,7 +509,7 @@ img {
   color: #afb1b8;
   fill: currentColor;
 
-  transition-property: color;
+  transition-property: color, fill;
   transition-duration: 250ms;
   transition-timing-function: var(--timing-function);
 }
